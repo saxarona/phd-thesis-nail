@@ -1,0 +1,15 @@
+%% Fonts and typography
+\RequirePackage{lmodern}           % Latin Modern
+\renewcommand{\sfdefault}{phv}     % Helvetica
+\RequirePackage[scaled]{beramono}  % Bera Mono (Bitstream Vera Sans Mono)
+\RequirePackage[final]{microtype}  % Improved typography
+\pretolerance = 1000               % Relaxes parameters for line breaks
+\tolerance    = 2000               % Relaxes parameters for line breaks
+
+% General document styles
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot[LE,RO]{\thepage}
+

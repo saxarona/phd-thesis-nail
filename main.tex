@@ -1,0 +1,83 @@
+\documentclass[10pt,b5paper,twoside,openright,onecolumn,titlepage]{thesis}
+
+% Library includes
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{scrextend}
+\usepackage{lipsum}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage[resetlabels]{multibib}
+\usepackage{fancyhdr}
+\usepackage{styles}
+\usepackage{mathptm}
+\usepackage{lscape} % vertical tables
+\usepackage{array}
+\usepackage{hhline} % double horizontal line in table
+\usepackage{tabto}
+\usepackage{mathtools}
+\usepackage{bigfoot}
+\usepackage{placeins}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage{blindtext}
+\usepackage{minted} 
+\setminted{fontsize=\small,baselinestretch=1}
+\usepackage{tablefootnote}
+\usepackage{refcount} % ability to refer to same table footnotes
+\captionsetup{compatibility=false}
+\usepackage{framed,multirow}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+
+
+% Custom commands
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\newcites{Paperone}{References}
+
+
+\begin{document}
+
+\input{chapters/00-coverpage}
+\input{chapters/01-abstract}
+\input{chapters/02-preface}
+\input{chapters/03-acknowledgements}
+
+
+\tableofcontents
+\newpage
+
+\mainmatter
+
+\part{Research Overview}
+
+\input{chapters/04-introduction}
+\input{chapters/05-background}
+\input{chapters/06-Methodology}
+\input{chapters/07-contributions}
+\input{chapters/08-discussion}
+\input{chapters/09-conclusion}
+
+\bibliographystyle{unsrt}
+\bibliography{references.bib}
+
+\part{Selected Publications}
+
+\input{chapters/papers/paperspreamble}
+
+\input{chapters/papers/paper1/paper1}
+
+\appendix
+\input{appendices/a-appendix.tex}
+
+
+\end{document}
