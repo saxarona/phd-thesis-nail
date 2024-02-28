@@ -50,7 +50,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LAYOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%% Paper size
+% Paper size
 \setlength\paperheight {250mm}
 \setlength\paperwidth  {176mm}
 \setstocksize{250mm}{176mm}
@@ -61,92 +61,92 @@
 \checkandfixthelayout
 
 
-%% Custom title page
-\newcommand{\titlepage}
-{
-    \begin{titlingpage}
-        \sffamily
-        \renewcommand{\and}{\vskip1mm}
-        \newcommand{\AND}{\vskip9mm}
+% Custom title page
+% \newcommand{\titlepage}
+% {
+%     \begin{titlingpage}
+%         \sffamily
+%         \renewcommand{\and}{\vskip1mm}
+%         \newcommand{\AND}{\vskip9mm}
 
-        \calccentering{\unitlength}
-        \begin{adjustwidth*}{\unitlength}{-\unitlength}
+%         \calccentering{\unitlength}
+%         \begin{adjustwidth*}{\unitlength}{-\unitlength}
 
-            \raggedright
+%             \raggedright
 
-            \vspace*{-5mm}
-            \vskip18mm
+%             \vspace*{-5mm}
+%             \vskip18mm
 
-            \resizebox
-            {
-                \ifdim \width > \textwidth
-                \textwidth
-                \else
-                \width
-                \fi
-            }{!}
-            {%
-                \LARGE
-                \theauthor
-            }
+%             \resizebox
+%             {
+%                 \ifdim \width > \textwidth
+%                 \textwidth
+%                 \else
+%                 \width
+%                 \fi
+%             }{!}
+%             {%
+%                 \LARGE
+%                 \theauthor
+%             }
 
-            \vskip1.5\onelineskip
+%             \vskip1.5\onelineskip
 
-            {
-                \Huge
-                \bfseries
-                \boldmath
-                \thetitle
-                \par
-            }
+%             {
+%                 \Huge
+%                 \bfseries
+%                 \boldmath
+%                 \thetitle
+%                 \par
+%             }
 
-            {
-                \ifcsempty{\phduio@subtitle}
-                {}
-                {
-                    \vskip2mm
-                    \huge
-                    \phduio@subtitle
-                    \par
-                }
-            }
+%             {
+%                 \ifcsempty{\phduio@subtitle}
+%                 {}
+%                 {
+%                     \vskip2mm
+%                     \huge
+%                     \phduio@subtitle
+%                     \par
+%                 }
+%             }
 
-            \vskip-\lastskip
-            \vskip16mm
+%             \vskip-\lastskip
+%             \vskip16mm
 
 
-            \AND
+%             \AND
 
-            {
-                \Large
-                Thesis for the degree of Philosophiae Doctor
-                \AND
-                \phduio@dept\
-                \and
-                \phduio@faculty\
-                \AND
-                \phduio@affiliation\
-            }
+%             {
+%                 \Large
+%                 Thesis for the degree of Philosophiae Doctor
+%                 \AND
+%                 \phduio@dept\
+%                 \and
+%                 \phduio@faculty\
+%                 \AND
+%                 \phduio@affiliation\
+%             }
 
-            \vfill
+%             \vfill
 
-            \begin{minipage}[c]{\textwidth - 28mm}
-                \hfill
-                \LARGE
-                \bfseries
-                \the\year
-            \end{minipage}
+%             \begin{minipage}[c]{\textwidth - 28mm}
+%                 \hfill
+%                 \LARGE
+%                 \bfseries
+%                 \the\year
+%             \end{minipage}
 
-            \vspace{2mm}
+%             \vspace{2mm}
 
-        \end{adjustwidth*}
+%         \end{adjustwidth*}
 
-        \null
-        \clearpage
-        \ifdefstring{\phduio@colophon}{true}{\phduio@print@colophon}{}
+%         \null
+%         \clearpage
+%         \ifdefstring{\phduio@colophon}{true}{\phduio@print@colophon}{}
 
-    \end{titlingpage}
-}
+%     \end{titlingpage}
+% }
 
 
 %% Book
@@ -171,7 +171,7 @@
 \newlength{\afterauthorsskip}
 \newlength{\aftermetadataskip}
 
-\makechapterstyle{phduio}
+\makechapterstyle{nail}
 {
     \renewcommand*{\chapnamefont}{\huge\sffamily}
     \renewcommand*{\chapnumfont}{\huge\sffamily}
@@ -218,7 +218,7 @@
     }
 }
 
-\chapterstyle{phduio}
+\chapterstyle{nail}
 
 
 %% Lower level sections
@@ -289,7 +289,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INCLUDE PAPERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%% Title for papers
+% Title for papers
 \renewcommand{\maketitle}
 {
     \paperauthors{\theauthor}
@@ -300,7 +300,7 @@
 }
 
 
-%% Specify authors for separate paper
+% Specify authors for separate paper
 \newcommand{\paperauthors}[1]
 {
     \renewcommand{\and}{\leavevmode\unskip,\space}
@@ -314,7 +314,7 @@
 \metadata{}
 
 
-%% Rename 'Chapter' to 'Paper'
+% Rename 'Chapter' to 'Paper'
 \newcommand*{\paper}
 {
     \setcounter{chapter}{0}
@@ -341,8 +341,8 @@
 \newcounter{paper}
 
 
-%% Standard \appendix is broken by \paper
-%% Fix hyperlinks to appendices
+% Standard \appendix is broken by \paper
+% Fix hyperlinks to appendices
 \renewcommand*{\appendix}
 {
     \setcounter{chapter}{0}
@@ -369,20 +369,22 @@
 \newcounter{appendix}
 
 
-%% Print 'Papers'
-\newcommand{\paperpage}
-{
-    \part*{Papers}
-    \addcontentsline{toc}{chapter}{Papers}
-    \cleartorecto
-}
+% Print 'Papers'
+% \newcommand{\paperpage}
+% {
+%     \part*{Papers}
+%     \addcontentsline{toc}{chapter}{Papers}
+%     \cleartorecto
+% }
 
 
-%% Specify number of papers
+% Specify number of papers
+% Used
 \newcommand{\numberofpapers}[1]{ \setcounter{totpapernum}{#1} }
 
 
-%% Thumb index to separate papers
+% Thumb index to separate papers
+% Used
 \newcommand{\paperthumb}
 {
     \ifnum \value{thumbpos} = \value{totpapernum}
@@ -402,6 +404,7 @@
     \end{tikzpicture}
 }
 
+% Used
 \newcounter{thumbnum}
 \newcounter{thumbpos}
 \newcounter{totpapernum}
@@ -415,8 +418,8 @@
 {
     thumb/.style =
     {
-        fill           = uioblack,
-        text           = uiowhite,
+        fill           = ntnublack,
+        text           = ntnuwhite,
         font           = \sffamily\bfseries\Huge,
         text width     = \thumbwidth,
         minimum height = \thumbheight,
@@ -426,171 +429,168 @@
 }
 
 
-%% Unmarked footnote
-\newcommand{\papernote}[1]
-{
-    \begingroup
-        \renewcommand{\thefootnote}{}
-        \footnotetext{#1}
-     \endgroup
-}
+% Unmarked footnote
+% \newcommand{\papernote}[1]
+% {
+%     \begingroup
+%         \renewcommand{\thefootnote}{}
+%         \footnotetext{#1}
+%      \endgroup
+% }
 
 
-%% Unmarked footnote for paper title
-\renewcommand{\thanks}[1]{ \gdef \phduio@thanks{#1} }
-\thanks{}
-\renewcommand{\saythanks}
-{
-    \ifcsempty{phduio@thanks}
-    {}
-    {
-        \papernote{\phduio@thanks}
-        \thanks{}
-    }
-}
+% Unmarked footnote for paper title
+% \renewcommand{\thanks}[1]{ \gdef \phduio@thanks{#1} }
+% \thanks{}
+% \renewcommand{\saythanks}
+% {
+%     \ifcsempty{phduio@thanks}
+%     {}
+%     {
+%         \papernote{\phduio@thanks}
+%         \thanks{}
+%     }
+% }
 
 
-%% Include PDFs containing separate papers
-%% Based on code by Dag Langmyhr
-\newcommand{\includearticle}[2][]
-{
-    \cleartorecto
+% Include PDFs containing separate papers
+% Based on code by Dag Langmyhr
+% \newcommand{\includearticle}[2][]
+% {
+%     \cleartorecto
 
-    \def \ps@default
-    {
-        \let \@mkboth\@gobbletwo
-        \let \@oddhead\@empty
-        \def \@oddfoot{\hfil\sffamily\thepage}
-        \let \@evenhead\@empty
-        \def \@evenfoot{\sffamily\thepage\hfil}
-    }
+%     \def \ps@default
+%     {
+%         \let \@mkboth\@gobbletwo
+%         \let \@oddhead\@empty
+%         \def \@oddfoot{\hfil\sffamily\thepage}
+%         \let \@evenhead\@empty
+%         \def \@evenfoot{\sffamily\thepage\hfil}
+%     }
 
-    \def \phduio@ps{default}
+%     \def \phduio@ps{default}
 
-    \def \ps@low
-    {
-        \let\@mkboth\@gobbletwo
-        \let\@oddhead\@empty
-        \def\@oddfoot{\hfil\raisebox{-7.5mm}{\sffamily\thepage}}
-        \let\@evenhead\@empty
-        \def\@evenfoot{\raisebox{-7.5mm}{\sffamily\thepage}\hfil}
-    }
+%     \def \ps@low
+%     {
+%         \let\@mkboth\@gobbletwo
+%         \let\@oddhead\@empty
+%         \def\@oddfoot{\hfil\raisebox{-7.5mm}{\sffamily\thepage}}
+%         \let\@evenhead\@empty
+%         \def\@evenfoot{\raisebox{-7.5mm}{\sffamily\thepage}\hfil}
+%     }
 
-    \let \ps@none = \ps@empty
+%     \let \ps@none = \ps@empty
 
-    \setkeys{phduio@keys}{#1}
+%     \setkeys{phduio@keys}{#1}
 
-    \includepdf[pages = {-}, pagecommand = {\thispagestyle{\phduio@ps}}]{#2}
-}
+%     \includepdf[pages = {-}, pagecommand = {\thispagestyle{\phduio@ps}}]{#2}
+% }
 
-\define@key{phduio@keys}{numbers}{ \def \phduio@ps{#1} }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% UTILITIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \define@key{phduio@keys}{numbers}{ \def \phduio@ps{#1} }
 
 
-%% Offical colours
-\definecolor{uiored}  {cmyk}{0, 1, 1, 0}
-\definecolor{uiogrey} {cmyk}{0, 0.05, 0.1, 0.29}
-\definecolor{uiowhite}{cmyk}{0, 0, 0, 0}
-\definecolor{uioblack}{cmyk}{0, 0, 0, 1}
-\definecolor{uiolink} {HTML}{0B5A9D}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% UTILITIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%% Print official logo colon
-\newcommand{\uiocolon}
-{
-    \includegraphics[height = 1.5ex]{figures/phduio-colon}\,%
-}
+% Official colours
+\definecolor{ntnuwhite}{cmyk}{0, 0, 0, 0}
+\definecolor{ntnublack}{cmyk}{0, 0, 0, 1}
+
+
+% Print official logo colon
+% \newcommand{\uiocolon}
+% {
+%     \includegraphics[height = 1.5ex]{figures/phduio-colon}\,%
+% }
 
 %% Subtitle
 \newcommand{\subtitle}[1]{ \def \phduio@subtitle{#1} }
 \subtitle{}
 
 
-%% Specify affiliation
-\newcommand{\department}[1]{ \def \phduio@dept{#1} }
-\newcommand{\faculty}[1]{ \def \phduio@faculty{#1} }
-\newcommand{\affiliation}[1]{ \def \phduio@affiliation{#1} }
-\department{}
-\faculty{}
-\affiliation{}
+% Specify affiliation
+% \newcommand{\department}[1]{ \def \phduio@dept{#1} }
+% \newcommand{\faculty}[1]{ \def \phduio@faculty{#1} }
+% \newcommand{\affiliation}[1]{ \def \phduio@affiliation{#1} }
+% \department{}
+% \faculty{}
+% \affiliation{}
 
 
-%% Specify International Standard Serial/Book Number
-\newcommand{\ISSN}[1]{ \def \phduio@ISN{ISSN\space#1}}
-\newcommand{\ISBN}[1]{ \def \phduio@ISN{ISBN\space#1}}
-\ISSN{ISSN}
+% Specify International Standard Serial/Book Number
+% \newcommand{\ISSN}[1]{ \def \phduio@ISN{ISSN\space#1}}
+% \newcommand{\ISBN}[1]{ \def \phduio@ISN{ISBN\space#1}}
+% \ISSN{ISSN}
 
 
-%% Specify dissertation series number
-\newcommand{\dissertationseries}[1]{ \def \phduio@dissertationseries{#1} }
-\dissertationseries{}
+% Specify dissertation series number
+% \newcommand{\dissertationseries}[1]{ \def \phduio@dissertationseries{#1} }
+% \dissertationseries{}
 
 
-%% Specify production credits
-\newcommand{\cover}[1]{ \def \phduio@cover{#1} }
-\newcommand{\printinghouse}[1]{ \def \phduio@printinghouse{#1} }
-\cover{Hanne Baadsgaard Utigard}
-\printinghouse{Reprosentralen, University of Oslo}
+% Specify production credits
+% \newcommand{\cover}[1]{ \def \phduio@cover{#1} }
+% \newcommand{\printinghouse}[1]{ \def \phduio@printinghouse{#1} }
+% \cover{Hanne Baadsgaard Utigard}
+% \printinghouse{Reprosentralen, University of Oslo}
 
 
-%% Print colophon
-\newcommand{\phduio@print@colophon}
-{
-    \thispagestyle{empty}
-    \vspace*{\stretch{3}}
-        \begin{flushleft}
-            \textbf{\sffamily\textcopyright\space\theauthor,\space\the\year}
-            \vskip2\baselineskip
-            \textit{Series of dissertations submitted to the}
-            \par
-            \textit{\phduio@faculty, University of Oslo}
-            \par
-            \ifcsempty{phduio@dissertationseries}
-            {}
-            {\textit{No.}\space\phduio@dissertationseries}
-            \vskip\baselineskip
-            \phduio@ISN
-            \vskip2\baselineskip
-            \small
-            All rights reserved.
-            No part of this publication may be
-            \par
-            reproduced or transmitted,
-            in any form or by any means,
-            without permission.
-            \vskip7\baselineskip
-            Cover: \phduio@cover.
-            \par
-            Print production: \phduio@printinghouse.
-    \end{flushleft}
-    \vspace*{\stretch{1}}
-    \null
-    \newpage
-}
+% Print colophon
+% \newcommand{\phduio@print@colophon}
+% {
+%     \thispagestyle{empty}
+%     \vspace*{\stretch{3}}
+%         \begin{flushleft}
+%             \textbf{\sffamily\textcopyright\space\theauthor,\space\the\year}
+%             \vskip2\baselineskip
+%             \textit{Series of dissertations submitted to the}
+%             \par
+%             \textit{\phduio@faculty, University of Oslo}
+%             \par
+%             \ifcsempty{phduio@dissertationseries}
+%             {}
+%             {\textit{No.}\space\phduio@dissertationseries}
+%             \vskip\baselineskip
+%             \phduio@ISN
+%             \vskip2\baselineskip
+%             \small
+%             All rights reserved.
+%             No part of this publication may be
+%             \par
+%             reproduced or transmitted,
+%             in any form or by any means,
+%             without permission.
+%             \vskip7\baselineskip
+%             Cover: \phduio@cover.
+%             \par
+%             Print production: \phduio@printinghouse.
+%     \end{flushleft}
+%     \vspace*{\stretch{1}}
+%     \null
+%     \newpage
+% }
 
 
-%% Print current month
-\newcommand{\MONTH}
-{%
-    \leavevmode\unskip\space
-    \ifcase\the\month
-    \or January
-    \or February
-    \or March
-    \or April
-    \or May
-    \or June
-    \or July
-    \or August
-    \or September
-    \or October
-    \or November
-    \or December
-    \fi
-    \ignorespaces
-}
+% % Print current month
+% \newcommand{\MONTH}
+% {%
+%     \leavevmode\unskip\space
+%     \ifcase\the\month
+%     \or January
+%     \or February
+%     \or March
+%     \or April
+%     \or May
+%     \or June
+%     \or July
+%     \or August
+%     \or September
+%     \or October
+%     \or November
+%     \or December
+%     \fi
+%     \ignorespaces
+% }
 
 
 
