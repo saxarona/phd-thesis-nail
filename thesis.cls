@@ -1,20 +1,20 @@
 
-
-%% Implemented by Martin Helso (martibhe@math.uio.no)
+%% Implemented by Martin Helso
+%% Adapted by Bart Iver van Blokland, and later by Xavier F. C. Sánchez Díaz
 
 
 \NeedsTeXFormat{LaTeX2e}
 
 
-\ProvidesClass{thesis}[2020/11/06 Class for PhD theses at UiO]
+\ProvidesClass{thesis}[2025/02/11 Class for PhD theses at NTNUs NAIL]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CLASS OPTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %% Colophon
-\DeclareOption{colophon}  { \def \phduio@colophon{true}  }
-\DeclareOption{nocolophon}{ \def \phduio@colophon{false} }
+\DeclareOption{colophon}  { \def \phdntnu@colophon{true}  }
+\DeclareOption{nocolophon}{ \def \phdntnu@colophon{false} }
 
 
 
@@ -56,7 +56,7 @@
 \setstocksize{250mm}{176mm}
 \settrimmedsize{250mm}{176mm}{*}
 \settrims{0mm}{0mm}
-\setlrmarginsandblock{20mm}{28.7mm}{*}
+\setlrmarginsandblock{23mm}{28.7mm}{*}
 \setulmarginsandblock{25mm}{25mm}{*}
 \checkandfixthelayout
 
@@ -101,12 +101,12 @@
 %             }
 
 %             {
-%                 \ifcsempty{\phduio@subtitle}
+%                 \ifcsempty{\phdntnu@subtitle}
 %                 {}
 %                 {
 %                     \vskip2mm
 %                     \huge
-%                     \phduio@subtitle
+%                     \phdntnu@subtitle
 %                     \par
 %                 }
 %             }
@@ -121,11 +121,11 @@
 %                 \Large
 %                 Thesis for the degree of Philosophiae Doctor
 %                 \AND
-%                 \phduio@dept\
+%                 \phdntnu@dept\
 %                 \and
-%                 \phduio@faculty\
+%                 \phdntnu@faculty\
 %                 \AND
-%                 \phduio@affiliation\
+%                 \phdntnu@affiliation\
 %             }
 
 %             \vfill
@@ -143,7 +143,7 @@
 
 %         \null
 %         \clearpage
-%         \ifdefstring{\phduio@colophon}{true}{\phduio@print@colophon}{}
+%         \ifdefstring{\phdntnu@colophon}{true}{\phdntnu@print@colophon}{}
 
 %     \end{titlingpage}
 % }
@@ -191,20 +191,20 @@
         \vskip\afterchapskip
         \ifboolexpr
         {
-            test{ \ifcsempty{phduio@authors} }
+            test{ \ifcsempty{phdntnu@authors} }
             and
-            test{ \ifcsempty{phduio@metadata} }
+            test{ \ifcsempty{phdntnu@metadata} }
         }
         {}
         {
         \begin{minipage}[t]{\textwidth}
             \authorsfont
-            \phduio@authors
+            \phdntnu@authors
             \vskip\afterauthorsskip
             \metadatafont
-            \phduio@metadata
-            \gdef \phduio@authors{}
-            \gdef \phduio@metadata{}
+            \phdntnu@metadata
+            \gdef \phdntnu@authors{}
+            \gdef \phdntnu@metadata{}
         \end{minipage}
         \vskip\aftermetadataskip
         }
@@ -261,13 +261,13 @@
 
 
 %% Running header and footer
-\makepagestyle{phduio}
-\makeheadrule{phduio}{\textwidth}{\normalrulethickness}
-\makeevenhead{phduio}{\sffamily\leftmark}{}{}
-\makeoddhead {phduio}{}{}{\sffamily\rightmark}
-\makeevenfoot{phduio}{\sffamily\thepage}{}{}
-\makeoddfoot {phduio}{}{}{\sffamily\thepage}
-\makepsmarks{phduio}
+\makepagestyle{phdntnu}
+\makeheadrule{phdntnu}{\textwidth}{\normalrulethickness}
+\makeevenhead{phdntnu}{\sffamily\leftmark}{}{}
+\makeoddhead {phdntnu}{}{}{\sffamily\rightmark}
+\makeevenfoot{phdntnu}{\sffamily\thepage}{}{}
+\makeoddfoot {phdntnu}{}{}{\sffamily\thepage}
+\makepsmarks{phdntnu}
 {
     \nouppercaseheads
     \createmark{chapter}{left}{shownumber}{}{. \space}
@@ -279,7 +279,7 @@
     \createplainmark{index}{both}{\indexname}
     \createplainmark{glossary}{both}{\glossaryname}
 }
-\pagestyle{phduio}
+\pagestyle{phdntnu}
 
 \makepagestyle{chapter}
 \makeevenfoot{chapter}{\sffamily\thepage}{}{}
@@ -304,13 +304,13 @@
 \newcommand{\paperauthors}[1]
 {
     \renewcommand{\and}{\leavevmode\unskip,\space}
-    \def \phduio@authors{#1}
+    \def \phdntnu@authors{#1}
 }
 \paperauthors{}
 
 
 %% Specify metadata for separate paper
-\newcommand{\metadata}[1]{ \def \phduio@metadata{#1} }
+\newcommand{\metadata}[1]{ \def \phdntnu@metadata{#1} }
 \metadata{}
 
 
@@ -412,7 +412,7 @@
 
 \newlength{\thumbwidth}
 \newlength{\thumbheight}
-\setlength{\thumbwidth}{1cm}
+\setlength{\thumbwidth}{0.5cm} % Width of thumb for papers
 
 \tikzset
 {
@@ -440,14 +440,14 @@
 
 
 % Unmarked footnote for paper title
-% \renewcommand{\thanks}[1]{ \gdef \phduio@thanks{#1} }
+% \renewcommand{\thanks}[1]{ \gdef \phdntnu@thanks{#1} }
 % \thanks{}
 % \renewcommand{\saythanks}
 % {
-%     \ifcsempty{phduio@thanks}
+%     \ifcsempty{phdntnu@thanks}
 %     {}
 %     {
-%         \papernote{\phduio@thanks}
+%         \papernote{\phdntnu@thanks}
 %         \thanks{}
 %     }
 % }
@@ -468,7 +468,7 @@
 %         \def \@evenfoot{\sffamily\thepage\hfil}
 %     }
 
-%     \def \phduio@ps{default}
+%     \def \phdntnu@ps{default}
 
 %     \def \ps@low
 %     {
@@ -481,12 +481,12 @@
 
 %     \let \ps@none = \ps@empty
 
-%     \setkeys{phduio@keys}{#1}
+%     \setkeys{phdntnu@keys}{#1}
 
-%     \includepdf[pages = {-}, pagecommand = {\thispagestyle{\phduio@ps}}]{#2}
+%     \includepdf[pages = {-}, pagecommand = {\thispagestyle{\phdntnu@ps}}]{#2}
 % }
 
-% \define@key{phduio@keys}{numbers}{ \def \phduio@ps{#1} }
+% \define@key{phdntnu@keys}{numbers}{ \def \phdntnu@ps{#1} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% UTILITIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -500,43 +500,43 @@
 % Print official logo colon
 % \newcommand{\uiocolon}
 % {
-%     \includegraphics[height = 1.5ex]{figures/phduio-colon}\,%
+%     \includegraphics[height = 1.5ex]{figures/phdntnu-colon}\,%
 % }
 
 %% Subtitle
-\newcommand{\subtitle}[1]{ \def \phduio@subtitle{#1} }
+\newcommand{\subtitle}[1]{ \def \phdntnu@subtitle{#1} }
 \subtitle{}
 
 
 % Specify affiliation
-% \newcommand{\department}[1]{ \def \phduio@dept{#1} }
-% \newcommand{\faculty}[1]{ \def \phduio@faculty{#1} }
-% \newcommand{\affiliation}[1]{ \def \phduio@affiliation{#1} }
+% \newcommand{\department}[1]{ \def \phdntnu@dept{#1} }
+% \newcommand{\faculty}[1]{ \def \phdntnu@faculty{#1} }
+% \newcommand{\affiliation}[1]{ \def \phdntnu@affiliation{#1} }
 % \department{}
 % \faculty{}
 % \affiliation{}
 
 
 % Specify International Standard Serial/Book Number
-% \newcommand{\ISSN}[1]{ \def \phduio@ISN{ISSN\space#1}}
-% \newcommand{\ISBN}[1]{ \def \phduio@ISN{ISBN\space#1}}
+% \newcommand{\ISSN}[1]{ \def \phdntnu@ISN{ISSN\space#1}}
+% \newcommand{\ISBN}[1]{ \def \phdntnu@ISN{ISBN\space#1}}
 % \ISSN{ISSN}
 
 
 % Specify dissertation series number
-% \newcommand{\dissertationseries}[1]{ \def \phduio@dissertationseries{#1} }
+% \newcommand{\dissertationseries}[1]{ \def \phdntnu@dissertationseries{#1} }
 % \dissertationseries{}
 
 
 % Specify production credits
-% \newcommand{\cover}[1]{ \def \phduio@cover{#1} }
-% \newcommand{\printinghouse}[1]{ \def \phduio@printinghouse{#1} }
+% \newcommand{\cover}[1]{ \def \phdntnu@cover{#1} }
+% \newcommand{\printinghouse}[1]{ \def \phdntnu@printinghouse{#1} }
 % \cover{Hanne Baadsgaard Utigard}
 % \printinghouse{Reprosentralen, University of Oslo}
 
 
 % Print colophon
-% \newcommand{\phduio@print@colophon}
+% \newcommand{\phdntnu@print@colophon}
 % {
 %     \thispagestyle{empty}
 %     \vspace*{\stretch{3}}
@@ -545,13 +545,13 @@
 %             \vskip2\baselineskip
 %             \textit{Series of dissertations submitted to the}
 %             \par
-%             \textit{\phduio@faculty, University of Oslo}
+%             \textit{\phdntnu@faculty, University of Oslo}
 %             \par
-%             \ifcsempty{phduio@dissertationseries}
+%             \ifcsempty{phdntnu@dissertationseries}
 %             {}
-%             {\textit{No.}\space\phduio@dissertationseries}
+%             {\textit{No.}\space\phdntnu@dissertationseries}
 %             \vskip\baselineskip
-%             \phduio@ISN
+%             \phdntnu@ISN
 %             \vskip2\baselineskip
 %             \small
 %             All rights reserved.
@@ -561,9 +561,9 @@
 %             in any form or by any means,
 %             without permission.
 %             \vskip7\baselineskip
-%             Cover: \phduio@cover.
+%             Cover: \phdntnu@cover.
 %             \par
-%             Print production: \phduio@printinghouse.
+%             Print production: \phdntnu@printinghouse.
 %     \end{flushleft}
 %     \vspace*{\stretch{1}}
 %     \null
