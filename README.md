@@ -1,4 +1,4 @@
-# A PhD thesis template for the Norwegian Open AI Lab
+# PhD thesis template &ndash; Norwegian Open AI Lab
 
 <p align="center">
   <img width=250px" src="https://raw.githubusercontent.com/ntnu-ai-lab/EvoLP.jl/main/docs/src/assets/logo_nail.png#gh-light-mode-only"/>
@@ -6,6 +6,8 @@
 </p>
 
 Yet another template for your PhD Thesis, with NAIL's logo on the cover page and a few other aesthetic enhancements 😁
+
+<img src="preview.png" width="350" />
 
 ## Credits and alternative templates
 
@@ -26,6 +28,10 @@ In general, this ends up being a bit more extensive but producing—in my opinio
 
 - Uses an updated (2025) version of NTNU's logo
 - The font is slightly larger
+- The margins are wider than Bjørn Magnus's, but narrower than Bart's (after Bart's suggestion!)
+    - Bart's: `\setlrmarginsandblock{20mm}{28.7mm}{*}`
+    - Our setting: `\setlrmarginsandblock{23mm}{28.7mm}{*}`
+    - Bjørn Magnus's: `\setlrmarginsandblock{25mm}{28.7mm}{*}`
 - Titles are typeset in sans serif
 - As opposed to Bart's, this template includes thumbs for each publication (like Bjørn Magnus's)
 - Thumbs are thinner (0.5cm down from 1cm)
